@@ -42,7 +42,7 @@ class BootStrap {
     if (!usuario.authorities.contains(rolUsuario)){
         UsuarioRol.create(usuario, rolUsuario)
     }
-
+    
     log.info "Creando Grupo General"
     def grupo = Grupo.findByNombre("GENERAL")
     if(!grupo){
