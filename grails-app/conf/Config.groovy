@@ -87,4 +87,24 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    debug  'grails.app'//,'test.integration'
 }
+
+grails.gorm.failOnError = true
+grails.gorm.default.mapping = {
+   id generator:'identity'
+}
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'login.Usuario'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'login.UsuarioRol'
+grails.plugins.springsecurity.authority.className = 'login.Rol'
+
+grails.plugins.springsecurity.roleHierarchy = '''
+   ROLE_ADMINISTRADOR > ROLE_USUARIO
+'''
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'login.Usuario'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'login.UsuarioRol'
+grails.plugins.springsecurity.authority.className = 'login.Rol'
