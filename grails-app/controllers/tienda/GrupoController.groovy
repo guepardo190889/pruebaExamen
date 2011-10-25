@@ -16,7 +16,6 @@ class GrupoController {
     }
 
     def create() {
-        log.debug "params: ${params}"
         [grupoInstance: new Grupo(params)]
     }
 

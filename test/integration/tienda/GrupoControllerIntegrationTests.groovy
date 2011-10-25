@@ -35,7 +35,7 @@ class GrupoControllerIntegrationTests {
         println "grupos: ${grupos.size()}"
         assertTrue grupos.size() > 0
         
-        assertEquals "TEST" , grupos.get(0).nombre
+        assertEquals "TEST" , grupos.get(1).nombre
         
     }
 

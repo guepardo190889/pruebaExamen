@@ -9,6 +9,6 @@ class Grupo {
     }
 
     String toString() {
-        return nombre
+        return "${nombre}"
     }
 }
