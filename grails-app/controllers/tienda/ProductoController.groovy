@@ -116,9 +116,7 @@ class ProductoController {
 
     @Secured(['ROLE_USUARIO'])
     def mostrarProducto(){
-        println "Prams: ${params}}"
         log.debug "Params: ${params}"
-        //def productoInstance = Producto.findByCodigo(params.codigo.toString())
         def productoInstance = Producto.get(params.productoId)
 
         log.debug "productoInstance: ${productoInstance}}"
