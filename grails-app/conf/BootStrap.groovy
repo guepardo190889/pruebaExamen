@@ -46,7 +46,7 @@ class BootStrap {
     log.info "Creando Grupo General"
     def grupo = Grupo.findByNombre("GENERAL")
     if(!grupo){
-        grupo = new Grupo(
+        grupo = new tienda.Grupo(
             nombre : "GENERAL"
         ).save(flush:true)
     }
@@ -129,5 +129,6 @@ class BootStrap {
 
     }
     def destroy = {
+        
     }
 }

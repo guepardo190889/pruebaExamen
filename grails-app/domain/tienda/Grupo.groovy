@@ -2,7 +2,7 @@ package tienda
 
 class Grupo {
 
-    def nombre
+    String nombre
 
     static constraints = {
         nombre blank:false
