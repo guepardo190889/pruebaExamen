@@ -22,6 +22,9 @@ class BootStrap {
         def administrador = login.Usuario.findByUsername("blackdeath")
         if(!administrador){
             administrador = new login.Usuario(
+                nombre: 'Seth Karim',
+                apellido: 'Luis Martinez',
+                correoElectronico: 'cuentasvarias@hotmail.com',
                 username:'blackdeath',
                 password : 'aeiou123',
                 enabled : true
@@ -34,6 +37,9 @@ class BootStrap {
         def usuario = login.Usuario.findByUsername("sklm")
         if(!usuario){
             usuario = new login.Usuario(
+                nombre: 'Carlos',
+                apellido: 'Trejo Montoya',
+                correoElectronico: 'cuentasvarias@hotmail.com',
                 username:'sklm',
                 password : 'aeiou123',
                 enabled : true
