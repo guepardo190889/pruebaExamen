@@ -7,6 +7,8 @@ class Usuario {
         String nombre
         String apellido
         String correoElectronico
+        Date fechaNacimiento
+        String telefono
 
 	String username
 	String password
@@ -19,6 +21,9 @@ class Usuario {
             nombre blank:false
             apellido blank:false
             correoElectronico blank:false
+            fechaNacimiento blank:false
+            correoElectronico blank:false
+            telefono blank:false
             username blank: false, unique: true
             password blank: false
 	}

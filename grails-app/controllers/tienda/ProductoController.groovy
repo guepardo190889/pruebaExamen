@@ -5,7 +5,7 @@ import grails.plugins.springsecurity.Secured
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 import org.springframework.dao.DataIntegrityViolationException
 
-@Secured(['ROLE_DMINISTRADOR'])
+@Secured(['ROLE_ADMINISTRADOR'])
 class ProductoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -14,18 +14,15 @@ class ProductoController {
         redirect(action: "list", params: params)
     }
 
-    @Secured(['ROLE_USUARIO'])
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [productoInstanceList: Producto.list(params), productoInstanceTotal: Producto.count()]
     }
 
-    @Secured(['ROLE_USUARIO'])
     def create() {
         [productoInstance: new Producto(params)]
     }
 
-    @Secured(['ROLE_USUARIO'])
     def save() {
         def productoInstance = new Producto(params)
         if (!productoInstance.save(flush: true)) {
@@ -37,7 +34,6 @@ class ProductoController {
         redirect(action: "show", id: productoInstance.id)
     }
 
-    @Secured(['ROLE_USUARIO'])
     def show() {
         def productoInstance = Producto.get(params.id)
         if (!productoInstance) {
@@ -109,12 +105,10 @@ class ProductoController {
         }
     }
 
-    @Secured(['ROLE_USUARIO'])
     def buscarProducto(){
 
     }
 
-    @Secured(['ROLE_USUARIO'])
     def mostrarProducto(){
         log.debug "Params: ${params}"
         def productoInstance = Producto.get(params.productoId)
@@ -131,7 +125,6 @@ class ProductoController {
         [productoInstance: productoInstance]
     }
 
-    @Secured(['ROLE_USUARIO'])
     def buscarProductosAutocomplete() {
         log.debug("Params: $params")
         def filtro = "%${params.term}%"

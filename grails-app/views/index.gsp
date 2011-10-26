@@ -105,9 +105,13 @@
 			<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>
 				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+<!--					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
+					</g:each>-->
+                                        <li class="controller"><g:link controller="usuario">Control de Usuario</g:link></li>
+                                        <li class="controller"><g:link controller="producto">Control de Producto</g:link></li>
+                                        <li class="controller"><g:link controller="grupo">Control de Grupo</g:link></li>
+                                        <li class="controller"><g:link controller="proveedor">Control de Proveedor</g:link></li>
 				</ul>
 			</div>
 		</div>
